@@ -16,9 +16,9 @@ const ItemSchema = {
   "Photo": { type: String },
   "Link": { type: String },
   "Phone": { type: String },
-  "Prating": { type: [Number], default: 0 },
-  "Nrating": { type: [Number], default: 0 },
-  "Visitor": { type: [Number], default: 0 },
+  "Prating": { type: Number, default: 0 },
+  "Nrating": { type: Number, default: 0 },
+  "Visitor": { type: Number, default: 0 },
   "Tags":{ type: [String] },
   "Meetup": { type: [String] },
   "Price": { type: [String] },
@@ -89,7 +89,7 @@ module.exports = function(emitter){
         let item = JSON.parse(JSON.stringify(options.content));
         delete item._id;
         db[options.table]
-          .updateOne({"_id" : ObjectId(options.content._id)},{$set:item},{multi: true},function(err,result){
+          .updateOne({"_id" : ObjectId(options.content._id)},item,{multi: true},function(err,result){
             if(err){
               reject(err);
             }

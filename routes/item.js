@@ -92,13 +92,86 @@ module.exports = function(emitter){
         table: req.body.table,
         content: {
           "_id":req.params.id,
-          $inc: rating
+      //    "UserId": { $ne: req.body.UserId },
+          "$inc": rating
         }
       };
+      console.log("chito",options);
       let r = emitter.invokeHook("db::update",options);
-      r.then(function(content){       
+      r.then(function(content){    
+        console.log("chito",content);
         res.status(200).json(content);
       },function(err){
+        res.status(500).json({ error:err });
+      });
+    }
+    else{
+      res.status(500).json("No record found");
+    }
+    
+  });
+  router.post('/validate/:id', function(req, res) {
+    if(req.body.table){
+      let options = {
+        table: req.body.table,
+        content: {
+          "_id":req.params.id
+        }
+      };
+      let r = emitter.invokeHook("db::find",options);
+      r.then(function(content){    
+        if(content[0].length){
+          let item = content[0][0];
+          let result = {
+            "version": "v2",
+            "content": {
+                "messages": [
+                  {
+                    "type": "cards",
+                    "image_aspect_ratio": "square",
+                    "elements": [
+                      {
+                        "title": "My Current Rating is " + Math.round(((item.Prating/item.Visitor)*100)* 100)/100 || 0 + "%, please give me an honest rate ",
+                        "subtitle": "Rating helps us improve our product/service to our beloved consumer",
+                        "image_url": item.Photo,
+                        "buttons": [
+                          {
+                            "type": "dynamic_block_callback",
+                            "caption": "Happy",
+                            "url": "https://codechito-hobby.glitch.me/item/rate/" + req.params.id,
+                            "method": "post",
+                            "payload": {
+                                "positive": true,
+                                "table": "Item",
+                                "UserId": req.body.UserId
+                            }
+                          },
+                          {
+                              "type": "dynamic_block_callback",
+                              "caption": "Sad",
+                              "url": "https://codechito-hobby.glitch.me/item/rate/" + req.params.id,
+                              "method": "post",
+                              "payload": {
+                                  "positive": false,
+                                  "table": "Item",
+                                  "UserId": req.body.UserId
+                              }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+          };
+          res.status(200).json(result);
+        }
+        else{
+          res.status(500).json("Code Error");
+        }
+        
+      },function(err){
+        console.log(err);
         res.status(500).json({ error:err });
       });
     }
@@ -132,44 +205,28 @@ module.exports = function(emitter){
         };
         content[0].forEach(function(item){
           elements.elements.push({
-            "title": item.Name + " for only " + item.Price + ", Meet up " + item.Meetup,
-            "subtitle": item.Description,
+            "title": item.Name + " for only " + item.Price + ",  Rating: " + Math.round(((item.Prating/item.Visitor)*100)* 100)/100 || 0 + "%",
+            "subtitle": item.Description + ", Meetup: " + item.Meetup,
             "image_url": item.Photo,
             "buttons": [
               {
                 "type": "call",
-                "caption": "Call me",
+                "caption": "Call Me",
                 "phone": item.Phone
               },
               {
                 "type": "url",
-                "caption": "Chat me",
+                "caption": "Chat Me",
                 "url": "https://m.me/" + item.Link
               },
               {
-                  "type": "dynamic_block_callback",
-                  "caption": "Great",
-                  "url": "https://codechito-hobby.glitch.me/item/rate/" + item._id,
-                  "method": "post",
-                  "payload": {
-                      "positive": true,
-                      "table": "Item"
-                  }
-              },
-              {
-                  "type": "dynamic_block_callback",
-                  "caption": "Worst",
-                  "url": "https://codechito-hobby.glitch.me/item/rate/" + item._id,
-                  "method": "post",
-                  "payload": {
-                      "positive": false,
-                      "table": "Item"
-                  }
+                "type": "node",
+                "caption": "Rate Me",
+                "target": "RateMe"
               }
             ]
-          });
-        });   
-        
+          });          
+        });    
         result.content.messages.push(elements);
         
         res.status(200).json(result);
