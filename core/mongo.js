@@ -19,6 +19,7 @@ const ItemSchema = {
   "Prating": { type: Number, default: 0 },
   "Nrating": { type: Number, default: 0 },
   "Visitor": { type: Number, default: 0 },
+  "Raters": { type: String },
   "Tags":{ type: [String] },
   "Meetup": { type: [String] },
   "Price": { type: [String] },
