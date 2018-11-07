@@ -81,29 +81,48 @@ module.exports = function(emitter){
   
   router.post('/rate/:id', function(req, res) {
     if(req.body.table){
-      let rating = {};
-      if(req.body.positive){
-        rating = { "Prating": 1, "Visitor": 1}
-      }
-      else{
-        rating = { "Nrating": 1, "Visitor": 1}
-      }
       let options = {
         table: req.body.table,
         content: {
           "_id":req.params.id,
-      //    "UserId": { $ne: req.body.UserId },
-          "$inc": rating
+          "Raters": { "$nin": [req.body.UserId]}
         }
       };
-      console.log("chito",options);
-      let r = emitter.invokeHook("db::update",options);
-      r.then(function(content){    
-        console.log("chito",content);
-        res.status(200).json(content);
+      let q = emitter.invokeHook("db::find",options);
+      q.then(function(content){  
+        let item = content[0][0];
+        if(item){
+        
+          let rating = {};
+          if(req.body.positive){
+            rating = { "Prating": 1, "Visitor": 1}
+          }
+          else{
+            rating = { "Nrating": 1, "Visitor": 1}
+          }
+          let options = {
+            table: req.body.table,
+            content: {
+              "_id":req.params.id,
+              "$inc": rating,
+              "$push": { "Raters": req.body.UserId }
+            }
+          };
+          let r = emitter.invokeHook("db::update",options);
+          r.then(function(content){    
+            res.status(200).json(content);
+          },function(err){
+            res.status(500).json({ error:err });
+          });
+        }
+        else{
+          res.status(500).json("Unable to rate, id not found or user already made a rate");
+        }
       },function(err){
         res.status(500).json({ error:err });
       });
+      
+      
     }
     else{
       res.status(500).json("No record found");
