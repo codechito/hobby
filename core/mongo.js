@@ -8,23 +8,18 @@ const config = require("config");
 
 var connection = mongoose.createConnection(config.mongodburl,{useNewUrlParser: true});
 
-const PricingSchema = {
-  "Name": { type: String, required: true },
-  "Price":{ type: Number }
-};
-
 const ItemSchema = {
+  "UserId": { type: String },
   "Type": { type: String },
   "Name": { type: String, required: true },
   "Description": { type: String },
   "Photo": { type: String },
   "Link": { type: String },
   "Phone": { type: String },
-  "Address": { type: String },
   "Rating": { type: String },
   "Tags":{ type: [String] },
   "Meetup": { type: [String] },
-  "Price": [PricingSchema],
+  "Price": { type: [String] },
   "entry": { type: Date, default: Date.now },
   "status": { type: Boolean, default: true }
 };
@@ -143,11 +138,12 @@ module.exports = function(emitter){
       if(db[options.table]){
         var Bulk = db[options.table].collection.initializeUnorderedBulkOp();
         options.content.forEach(function(content){
-          Bulk.find({ "_id": ObjectId(content._id) })
+          Bulk.find({ "_id": content._id })
               .remove();
         })
         Bulk.execute(function(err,result){
           if(err){
+            console.log(err);
             reject(err);
           }
           if(result){
@@ -185,7 +181,7 @@ module.exports = function(emitter){
   router.get('/', function(req, res) {
     let content = {};
     if(req.query.content){
-      content = JSON.parse(req.query.content);
+      content = req.query.content;
     }
     var options = {
       table: req.query.table,
@@ -207,7 +203,7 @@ module.exports = function(emitter){
 
   router.post('/', function(req, res) {
     if(req.body.content){
-      let content = JSON.parse(req.body.content);
+      let content = req.body.content;
       var options = {
         table: req.body.table,
         content: content
@@ -227,7 +223,7 @@ module.exports = function(emitter){
 
   router.put('/', function(req, res) {
     if(req.body.content){
-      let content = JSON.parse(req.body.content);
+      let content = req.body.content;
       var options = {
         table: req.body.table,
         content: content
@@ -247,7 +243,7 @@ module.exports = function(emitter){
 
   router.delete('/', function(req, res) {
     if(req.body.content){
-      let content = JSON.parse(req.body.content);
+      let content = req.body.content;
       var options = {
         table: req.body.table,
         content: content
