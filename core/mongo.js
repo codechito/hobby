@@ -9,6 +9,7 @@ const config = require("config");
 var connection = mongoose.createConnection(config.mongodburl,{useNewUrlParser: true});
 
 const ItemSchema = {
+  "UserId": { type: String },
   "Type": { type: String },
   "Name": { type: String, required: true },
   "Description": { type: String },
@@ -137,11 +138,12 @@ module.exports = function(emitter){
       if(db[options.table]){
         var Bulk = db[options.table].collection.initializeUnorderedBulkOp();
         options.content.forEach(function(content){
-          Bulk.find({ "_id": ObjectId(content._id) })
+          Bulk.find({ "_id": content._id })
               .remove();
         })
         Bulk.execute(function(err,result){
           if(err){
+            console.log(err);
             reject(err);
           }
           if(result){
