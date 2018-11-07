@@ -9,10 +9,37 @@ module.exports = function(emitter){
       "version": "v2",
       "content": {
           "messages": [
-              {
-                 "type": "text",
-                 "text": "simple text"    
-              }
+            {
+              "type": "cards",
+              "elements": 
+              [
+                {
+                  "title": "Card title",
+                  "subtitle": "card text",
+                  "image_url": "https://manybot-thumbnails.s3.eu-central-1.amazonaws.com/ca/xxxxxxzzzzzzzzz.png"  
+                },
+                {
+                  "title": "Card title",
+                  "subtitle": "card text",
+                  "image_url": "https://manybot-thumbnails.s3.eu-central-1.amazonaws.com/ca/xxxxxxzzzzzzzzz.png"  
+                },
+                {
+                  "title": "Card title",
+                  "subtitle": "card text",
+                  "image_url": "https://manybot-thumbnails.s3.eu-central-1.amazonaws.com/ca/xxxxxxzzzzzzzzz.png"  
+                },
+                {
+                  "title": "Card title",
+                  "subtitle": "card text",
+                  "image_url": "https://manybot-thumbnails.s3.eu-central-1.amazonaws.com/ca/xxxxxxzzzzzzzzz.png"  
+                },
+                {
+                  "title": "Card title",
+                  "subtitle": "card text",
+                  "image_url": "https://manybot-thumbnails.s3.eu-central-1.amazonaws.com/ca/xxxxxxzzzzzzzzz.png"  
+                }
+              ]
+             }   
           ]
       }
   });
