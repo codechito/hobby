@@ -39,7 +39,7 @@ module.exports = function(emitter){
   router.post('/remove', function(req, res){
     if(req.body.content && req.body.table){
       let content = req.body.content;
-      var options = {
+      let options = {
         table: req.body.table,
         content: content
       };
@@ -79,6 +79,35 @@ module.exports = function(emitter){
     }
   });
   
+  router.post('/rate/:id', function(req, res) {
+    if(req.body.table){
+      let rating = {};
+      if(req.body.positive){
+        rating = { "Prating": 1, "Visitor": 1}
+      }
+      else{
+        rating = { "Nrating": 1, "Visitor": 1}
+      }
+      let options = {
+        table: req.body.table,
+        content: {
+          "_id":req.params.id,
+          $inc: rating
+        }
+      };
+      let r = emitter.invokeHook("db::update",options);
+      r.then(function(content){       
+        res.status(200).json(content);
+      },function(err){
+        res.status(500).json({ error:err });
+      });
+    }
+    else{
+      res.status(500).json("No record found");
+    }
+    
+  });
+  
   router.post('/search', function(req, res) {
     
     if(req.body.content && req.body.table){
@@ -116,6 +145,26 @@ module.exports = function(emitter){
                 "type": "url",
                 "caption": "Chat me",
                 "url": "https://m.me/" + item.Link
+              },
+              {
+                  "type": "dynamic_block_callback",
+                  "caption": "Great",
+                  "url": "https://codechito-hobby.glitch.me/item/rate/" + item._id,
+                  "method": "post",
+                  "payload": {
+                      "positive": true,
+                      "table": "Item"
+                  }
+              },
+              {
+                  "type": "dynamic_block_callback",
+                  "caption": "Worst",
+                  "url": "https://codechito-hobby.glitch.me/item/rate/" + item._id,
+                  "method": "post",
+                  "payload": {
+                      "positive": false,
+                      "table": "Item"
+                  }
               }
             ]
           });
