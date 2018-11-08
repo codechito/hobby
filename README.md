@@ -37,5 +37,5 @@ Once you posted your item it will be searchable in the Page chat panel. It can o
 
 Watch the Video for more
 
-[![Image of Demo](https://youtu.be/jclHM8oTgzE/0.jpg)](https://youtu.be/jclHM8oTgzE)
+[Watch here teh actual video](https://youtu.be/jclHM8oTgzE)
 
