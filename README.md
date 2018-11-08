@@ -8,6 +8,14 @@ This is a manychat Template documentation and code, it will guide you on how to 
 
 Please note that PRO Templates require pages with ManyChat PRO subscription (PRO or FREE icons show the type of the page it can be installed. You can see the icon near the Template name).
 
+To install please register to Manychat(https://manychat.com) first then create your Facebook Pages. 
+
+Once done Connect you Facebook Page to your manychat account.
+
+When it's already connected navigate to the link below and install the Template by following the installation wizzard.
+Make sure it will overwrite your Main Menu so you can have the full functionality of these Template.
+
+
 ## How to use the Template
 
 ### How to Post an Item
