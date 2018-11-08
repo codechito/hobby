@@ -1,5 +1,5 @@
 # Hobby
-It integrates my ideas to world
+It integrates my ideas to the world
 
 This is a manychat Template documentation and code, it will guide you on how to install and use the template.
 
