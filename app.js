@@ -3,7 +3,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var emitter = require('./core/hooks');
+var emitter = require('sharky');
 var mongo = require('./core/mongo')(emitter);
 var item = require('./routes/item')(emitter);
 
