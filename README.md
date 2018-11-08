@@ -34,3 +34,8 @@ If you change your mind you can just go to Manage Item -> Remove Item on your Me
 Once you posted your item it will be searchable in the Page chat panel. It can only be search here, so you are sure that only those who has access to the Page can search your Item posted.
 
 ![Image of Search](https://codechito.github.io/hobby/assets/img3.png)
+
+Watch the Video for more
+
+![Image of Demo](https://youtu.be/jclHM8oTgzE)
+
