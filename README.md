@@ -10,9 +10,19 @@ Please note that PRO Templates require pages with ManyChat PRO subscription (PRO
 
 ## How to use the Template
 
-### How to Register an Item
+### How to Post an Item
+
+Posting your item for sale is done a few chat in messenger, upload a photo and enter the price and your done.
+You can even add more description and tag it to make appear in more search.
 ![Image of Registration](https://codechito.github.io/hobby/assets/img1.png)
+
 ### How to Remove an Item
+
+If you change your mind you can just go to Manage Item -> Remove Item on your Messenger Menu and enter the name of you item. and it will be deleted right away.
 ![Image of Remove](https://codechito.github.io/hobby/assets/img7.png)
-### Getting recommendationa using search
+
+### Getting Item recommendations using search
+
+Once you posted your item it will be searchable in the Page chat panel. It can only be search here, so you are sure that only those who has access to the Page can search your Item posted.
+
 ![Image of Search](https://codechito.github.io/hobby/assets/img3.png)
