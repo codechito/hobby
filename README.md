@@ -12,8 +12,8 @@ Please note that PRO Templates require pages with ManyChat PRO subscription (PRO
 
 ### How to Post an Item
 
-Posting your item for sale is done a few chat in messenger, upload a photo and enter the price and your done.
-You can even add more description and tag it to make appear in more search.
+Posting your item for sale is done with just a few chat in messenger, upload a photo and enter the price and your done.
+You can even add more description and tag it to make appear in more searches.
 ![Image of Registration](https://codechito.github.io/hobby/assets/img1.png)
 
 ### How to Remove an Item
