@@ -3,7 +3,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var emitter = require('sharky');
+var emitter = require('psharky');
 var mongo = require('./core/mongo')(emitter);
 var item = require('./routes/item')(emitter);
 
@@ -16,7 +16,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use("/assets",express.static(path.join(__dirname, 'public')));
 
 app.use('/data', mongo);
 app.use('/item', item);

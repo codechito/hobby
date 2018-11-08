@@ -141,6 +141,10 @@ module.exports = function(emitter){
       r.then(function(content){    
         if(content[0].length){
           let item = content[0][0];
+          let rate = 0;
+          if(item.Prating && item.Visitor){
+            rate = Math.round(((item.Prating/item.Visitor)*100)* 100)/100;
+          }
           let result = {
             "version": "v2",
             "content": {
@@ -150,7 +154,7 @@ module.exports = function(emitter){
                     "image_aspect_ratio": "square",
                     "elements": [
                       {
-                        "title": "My Current Rating is " + Math.round(((item.Prating/item.Visitor)*100)* 100)/100 || 0 + "%, please give me an honest rate ",
+                        "title": "My Current Rating is " + rate + "%, please give me an honest rate ",
                         "subtitle": "Rating helps us improve our product/service to our beloved consumer",
                         "image_url": item.Photo,
                         "buttons": [
@@ -223,8 +227,12 @@ module.exports = function(emitter){
           "elements": []
         };
         content[0].forEach(function(item){
+          let rate = 0;
+          if(item.Prating && item.Visitor){
+            rate = Math.round(((item.Prating/item.Visitor)*100)* 100)/100;
+          }
           elements.elements.push({
-            "title": item.Name + " for only " + item.Price + ",  Rating: " + Math.round(((item.Prating/item.Visitor)*100)* 100)/100 || 0 + "%",
+            "title": item.Name + " for only " + item.Price + ",  Rating: " + rate + "%",
             "subtitle": item.Description + ", Meetup: " + item.Meetup,
             "image_url": item.Photo,
             "buttons": [
