@@ -13,5 +13,6 @@ Please note that PRO Templates require pages with ManyChat PRO subscription (PRO
 ### How to Register an Item
 ![Image of Registration](https://codechito.github.io/hobby/assets/img1.png)
 ### How to Remove an Item
+![Image of Remove](https://codechito.github.io/hobby/assets/img7.png)
 ### Getting recommendationa using search
-![Image of Registration](https://codechito.github.io/hobby/assets/img3.png)
+![Image of Search](https://codechito.github.io/hobby/assets/img3.png)
