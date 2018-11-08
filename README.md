@@ -11,5 +11,6 @@ Please note that PRO Templates require pages with ManyChat PRO subscription (PRO
 ## How to use the Template
 
 ### How to Register an Item
+image::https://www.cicis.com/media/1155/pizza_trad_meateater.png[Hello]
 ### How to Remove an Item
 ### Getting recommendationa using search
