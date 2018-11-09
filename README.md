@@ -1,10 +1,14 @@
 # Hobby
 
+a simple posting, rating and searching of items via facebook messenger.
+
 ## Introduction
 Hobby introduce you a new way to shop using facebook messenger, 
 with just a single chat on messenger you can search and choose items you like.
 
 ## How To Install Templates
+
+The template will just need to be installed to a page using manychat and it will instantly work. You can even own the backend by just downloading the code in github repository.  These will be useful to those Facebook Page owner who wish to sell items to their likers or followers.
 
 Please note that PRO Templates require pages with ManyChat PRO subscription (PRO or FREE icons show the type of the page it can be installed. You can see the icon near the Template name).
 
