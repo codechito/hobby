@@ -1,8 +1,8 @@
 # Hobby
-It integrates my ideas to the world
 
-This is a manychat Template documentation and code, it will guide you on how to install and use the template.
-
+## Introduction
+Hobby introduce you a new way to shop using facebook messenger, 
+with just a single chat on messenger you can search and choose items you like.
 
 ## How To Install Templates
 
@@ -14,7 +14,6 @@ Once done Connect you Facebook Page to your manychat account.
 
 When it's already connected navigate to the link below and install the Template by following the installation wizzard.
 Make sure it will overwrite your Main Menu so you can have the full functionality of these Template.
-
 
 ## How to use the Template
 
