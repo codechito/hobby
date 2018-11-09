@@ -1,6 +1,6 @@
 # Hobby
 
-a simple posting, rating and searching of items via facebook messenger.
+a simple posting, rating, managing and searching of items via facebook messenger.
 
 ## Introduction
 Hobby introduce you a new way to shop using facebook messenger, 
