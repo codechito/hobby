@@ -9,20 +9,22 @@ const config = require("config");
 var connection = mongoose.createConnection(config.mongodburl,{useNewUrlParser: true});
 
 const ItemSchema = {
+  "PageId": { type: String },
   "UserId": { type: String },
   "Type": { type: String },
   "Name": { type: String, required: true },
   "Description": { type: String },
-  "Photo": { type: String },
+  "Photo": { type: String, required: true  },
+  "Url": { type: String },
   "Link": { type: String },
   "Phone": { type: String },
   "Prating": { type: Number, default: 0 },
   "Nrating": { type: Number, default: 0 },
   "Visitor": { type: Number, default: 0 },
   "Raters": { type: String },
-  "Tags":{ type: [String] },
-  "Meetup": { type: [String] },
-  "Price": { type: [String] },
+  "Tags":{ type: String },
+  "Meetup": { type: String },
+  "Price": { type: String },
   "entry": { type: Date, default: Date.now },
   "status": { type: Boolean, default: true }
 };
@@ -65,7 +67,7 @@ module.exports = function(emitter){
         db[options.table]
           .find(options.content)
           .skip(options.skip || 0)
-          .limit(options.limit || 100)
+          .limit(options.limit || 10)
           .sort(options.sort || {})
           .exec(function(err,result){
             if(err){
