@@ -25,18 +25,18 @@ Make sure it will overwrite your Main Menu so you can have the full functionalit
 
 Posting your item for sale is done with just a few chat in messenger, upload a photo and enter the price and your done.
 You can even add more description and tag it to make appear in more searches.
-![Image of Registration](https://codechito.github.io/hobby/assets/img1.png)
+Just go To Manage Items -> Post Item
 
 ### How to Remove an Item
 
 If you change your mind you can just go to Manage Item -> Remove Item on your Messenger Menu and enter the name of you item. and it will be deleted right away.
-![Image of Remove](https://codechito.github.io/hobby/assets/img7.png)
+![Image of Remove](https://codechito.github.io/hobby/assets/remove.png)
 
 ### Getting Item recommendations using search
 
 Once you posted your item it will be searchable in the Page chat panel. It can only be search here, so you are sure that only those who has access to the Page can search your Item posted.
 
-![Image of Search](https://codechito.github.io/hobby/assets/img3.png)
+![Image of Search](https://codechito.github.io/hobby/assets/search.png)
 
 Watch the Video for more
 
