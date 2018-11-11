@@ -1,0 +1,11 @@
+{
+    "id": "5be6f16217639e014dec9296",
+    "name": "remove",
+    "run_as_user_id": "",
+    "run_as_user_id_script_source": "",
+    "options": {
+        "httpMethod": "POST",
+        "validationMethod": "NO_VALIDATION"
+    },
+    "respond_result": false
+}

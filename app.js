@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var emitter = require('psharky');
+require('./core/facebook')(emitter);
 var mongo = require('./core/mongo')(emitter);
 var item = require('./routes/item')(emitter);
 
@@ -19,6 +20,21 @@ app.use(cookieParser());
 
 app.use('/data', mongo);
 app.use('/item', item);
+
+
+let q = emitter.invokeHook("fb::request::accesstoken",{});
+
+q.then(function(content){  
+  let q = emitter.invokeHook("fb::post::create",{});
+  q.then(function(content){  
+  
+    console.log("get token",content);
+  },function(err){
+    console.log("post create",err);
+  });
+},function(err){
+  console.log("get token",err);
+});
 
 
 module.exports = app;

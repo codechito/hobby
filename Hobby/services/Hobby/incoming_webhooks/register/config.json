@@ -1,0 +1,11 @@
+{
+    "id": "5be5354317639e014db18317",
+    "name": "register",
+    "run_as_user_id": "",
+    "run_as_user_id_script_source": "",
+    "options": {
+        "httpMethod": "POST",
+        "validationMethod": "NO_VALIDATION"
+    },
+    "respond_result": false
+}
