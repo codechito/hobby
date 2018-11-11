@@ -19,8 +19,9 @@ Once done Connect you Facebook Page to your manychat account.
 When it's already connected navigate to the link below and install the Template by following the installation wizzard.
 Make sure it will overwrite your Main Menu so you can have the full functionality of these Template.
 
-## How to use the Template
 [Install Hobby]()
+
+## How to use the Template
 ### How to Post an Item
 
 Posting your item for sale is done with just a few chat in messenger, upload a photo and enter the price and your done.
