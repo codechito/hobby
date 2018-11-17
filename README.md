@@ -12,13 +12,14 @@ The template will just need to be installed to a page using manychat and it will
 
 Please note that PRO Templates require pages with ManyChat PRO subscription (PRO or FREE icons show the type of the page it can be installed. You can see the icon near the Template name).
 
-To install please register to Manychat(https://manychat.com) first then create your Facebook Pages. 
+To install please register to [Manychat]: https://manychat.com first then create your Facebook Pages. 
 
 Once done Connect your Facebook Page to your manychat account.
 
 When it's already connected navigate to the link below
 
-https://manychat.com/template/c69232a6086963a78f4aae3753aef158d7d5c7e3
+[Install Hobby Template]: https://manychat.com/template/c69232a6086963a78f4aae3753aef158d7d5c7e3
+
 
 This template is created using PRO features, please upgrade to pro to enable install
 
