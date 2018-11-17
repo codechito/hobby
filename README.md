@@ -14,12 +14,20 @@ Please note that PRO Templates require pages with ManyChat PRO subscription (PRO
 
 To install please register to Manychat(https://manychat.com) first then create your Facebook Pages. 
 
-Once done Connect you Facebook Page to your manychat account.
+Once done Connect your Facebook Page to your manychat account.
 
-When it's already connected navigate to the link below and install the Template by following the installation wizzard.
+When it's already connected navigate to the link below
+
+https://manychat.com/template/c69232a6086963a78f4aae3753aef158d7d5c7e3
+
+This template is created using PRO features, please upgrade to pro to enable install
+
+and install the Template by following the installation wizzard.
 Make sure it will overwrite your Main Menu so you can have the full functionality of these Template.
 
-[Install Hobby]()
+![Image of Install](https://codechito.github.io/hobby/assets/install1.png)
+![Image of Install](https://codechito.github.io/hobby/assets/install2.png)
+![Image of Install](https://codechito.github.io/hobby/assets/install3.png)
 
 ## How to use the Template
 ### How to Post an Item
