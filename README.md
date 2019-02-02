@@ -25,6 +25,12 @@ This template is created using PRO features, please upgrade to pro to enable ins
 
 and install the Template by following the installation wizzard.
 Make sure it will overwrite your Main Menu so you can have the full functionality of these Template.
+you also need to create 3 user fields in your custom fields section with the following name
+
+item
+code
+search
+
 
 ![Image of Install](https://codechito.github.io/hobby/assets/install1.png)
 ![Image of Install](https://codechito.github.io/hobby/assets/install2.png)
